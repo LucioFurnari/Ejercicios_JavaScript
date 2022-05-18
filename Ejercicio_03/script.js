@@ -18,10 +18,10 @@ Button.addEventListener("click", event => {
     let inputValue = inputNumber.value;
     // console.log(inputValue);
     let resultFilter = Pizzas.filter(result => result.id == inputValue)
-    
+    console.log(resultFilter);
     if(resultFilter){
-        resultFilter.map(f => {console.log(f.nombre)})   
-    }else {
+        resultFilter.map(f => console.log(f.nombre))
+    }else{
         console.log("Error");
     }
 })
