@@ -18,13 +18,27 @@ Button.addEventListener("click", event => {
     let inputValue = inputNumber.value;
     // console.log(inputValue);
     let resultFilter = Pizzas.filter(result => result.id == inputValue)
-    console.log(resultFilter);
-    if(resultFilter){
-        resultFilter.map(f => console.log(f.nombre))
-    }else{
+    // console.log(resultFilter);
+    resultFilter.map(f => {
+        if(inputValue == f.id){
+            console.log(f.id);
+    }else {
         console.log("Error");
     }
+    })
 })
+    // Pizzas.map((pizza)=> {
+    //     if (inputValue == pizza.id ){
+    //         console.log(pizza.id);
+    //         pizzaName.textContent = pizza.nombre;
+    //         pizzaPrice.textContent = `${pizza.precio}$`;
+    //     }else if(inputValue != pizza.id) {
+    //         console.log("no existe");
+    //         }
+    //     });
+    // })
+    
+
     // if (inputValue == pizza.id ){
     //         pizzaName.textContent = pizza.nombre;
     //         pizzaPrice.textContent = `${pizza.precio}$`;
