@@ -18,14 +18,35 @@ Button.addEventListener("click", event => {
     let inputValue = inputNumber.value;
     // console.log(inputValue);
     let resultFilter = Pizzas.filter(result => result.id == inputValue)
-    // console.log(resultFilter);
-    resultFilter.map(f => {
-        if(inputValue == f.id){
-            console.log(f.id);
+    let resultFinder = Pizzas.find(element => inputValue == element.id)
+    // console.log(resultFilter[0].id);
+    // resultFilter.map((pizza)=> {
+    //     if(pizza.id == inputValue){
+    //         console.log("ID encontrando");
+    //         correctID = pizza.id
+    //     }else {
+    //         console.log("ID no encontrando")
+    //     }
+    // })
+    if(resultFilter[0].id == inputValue){
+        console.log("ID encontrando");
+    }else if(resultFilter == undefined) {
+        console.log("ID no encontrando")
+    }
+    
+    if (resultFinder){
+        console.log(resultFinder.id);
     }else {
         console.log("Error");
     }
-    })
+    // console.log(resultFilter);
+    // resultilter.map(f => {
+    //     if(inputValue == f.id){
+    //         console.log(f.id);
+    // }else {
+    //     console.log("Error");
+    // }
+    // })
 })
     // Pizzas.map((pizza)=> {
     //     if (inputValue == pizza.id ){
