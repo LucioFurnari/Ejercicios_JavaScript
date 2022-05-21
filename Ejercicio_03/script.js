@@ -12,58 +12,48 @@ const Button = document.querySelector("button");
 const pizzaName = document.querySelector("h2");
 const pizzaPrice = document.querySelector("h4");
 
+
+// let inputValue = inputNumber.value;
+
+function FindID(x) {
+    let inputValue = inputNumber.value;
+    if(inputValue == x.id){
+        console.log(x.id);
+        return true 
+    } else {
+        return false
+    }
+}
+
+Button.addEventListener("click",()=>{
+    Pizzas.map((pizza)=> { 
+        if(FindID(pizza)){
+            console.log("ID Encontrado");
+        }else if(FindID(pizza) == false) {
+            console.log("ERROR");
+        }
+        })
+})
+
+
+// Pizzas.map((pizza)=> { 
+//     FindID(pizza)
+// })
+
+//Probar doble if, un if que tome el resultado de otro 
+//Uno que tome el resultado del forEach 
+
 /////
 
-Button.addEventListener("click", event => {
-    let inputValue = inputNumber.value;
-    // console.log(inputValue);
-    let resultFilter = Pizzas.filter(result => result.id == inputValue)
-    let resultFinder = Pizzas.find(element => inputValue == element.id)
-    // console.log(resultFilter[0].id);
-    // resultFilter.map((pizza)=> {
-    //     if(pizza.id == inputValue){
-    //         console.log("ID encontrando");
-    //         correctID = pizza.id
-    //     }else {
-    //         console.log("ID no encontrando")
-    //     }
-    // })
-    if(resultFilter[0].id == inputValue){
-        console.log("ID encontrando");
-    }else if(resultFilter == undefined) {
-        console.log("ID no encontrando")
-    }
-    
-    if (resultFinder){
-        console.log(resultFinder.id);
-    }else {
-        console.log("Error");
-    }
-    // console.log(resultFilter);
-    // resultilter.map(f => {
-    //     if(inputValue == f.id){
-    //         console.log(f.id);
-    // }else {
-    //     console.log("Error");
-    // }
-    // })
-})
-    // Pizzas.map((pizza)=> {
-    //     if (inputValue == pizza.id ){
-    //         console.log(pizza.id);
-    //         pizzaName.textContent = pizza.nombre;
-    //         pizzaPrice.textContent = `${pizza.precio}$`;
-    //     }else if(inputValue != pizza.id) {
-    //         console.log("no existe");
-    //         }
-    //     });
-    // })
-    
-
-    // if (inputValue == pizza.id ){
-    //         pizzaName.textContent = pizza.nombre;
-    //         pizzaPrice.textContent = `${pizza.precio}$`;
-    //     }else {
-    //         console.log("no existe");
-    //     }
-    // });
+// Button.addEventListener("click", event => {
+//     let inputValue = inputNumber.value;
+//     // console.log(inputValue);
+//     Pizzas.map((pizza) => {
+//         if (inputValue == pizza.id ){
+//                 pizzaName.textContent = pizza.nombre;
+//                 pizzaPrice.textContent = `${pizza.precio}$`;
+//         }else if (inputValue != pizza.id) {
+//             console.log("no existe");
+//             }
+//         });
+//     })
