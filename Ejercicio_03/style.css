@@ -1,0 +1,54 @@
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 500px;
+
+    border: 2px solid rgb(201, 49, 11);
+    border-radius: 20px;
+    background-color: rgb(226, 148, 32);
+}
+
+.input-card{
+    display: flex;
+}
+.input-card input {
+    border: none;
+    background-color: rgba(201, 49, 11, 0.473);
+    border-bottom: 1px black solid;
+
+    padding: 8px;
+}
+
+.input-card button{
+    border: none;
+    margin-left: 5px;
+    padding: 8px;
+
+    font-size: 20px;
+}
+
+/*////////////////////*/
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardError {
+    display: none;
+}
