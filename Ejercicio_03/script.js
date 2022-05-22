@@ -12,23 +12,26 @@ const Button = document.querySelector("button");
 const pizzaName = document.querySelector("h2");
 const pizzaPrice = document.querySelector("h4");
 
-
+const errorAlert = document.createElement("h2");
+const card = document.querySelector(".card");
+card.appendChild(errorAlert);   
 
 Button.addEventListener("click", ()=> {
     let inputValue = inputNumber.value;
     const found = Pizzas.find(pizza => {if(pizza.id == inputValue){return true}})
-    const errorAlert = document.createElement("h2");
-    const card = document.querySelector(".card");
 
     if(found){
         console.log("Id encontrado");
         pizzaName.textContent = found.nombre;
         pizzaPrice.textContent = found.precio;
+        pizzaName.style.visibility = "visible";
+        pizzaPrice.style.visibility = "visible";
         errorAlert.style.visibility = "hidden"
     }else if (found == undefined){
-        errorAlert.textContent = "No existe pizza con ese ID";
-        card.appendChild(errorAlert);
-        errorAlert.style.visibility
+        errorAlert.textContent = "No existe pizza con ese ID";    
+        errorAlert.style.visibility = "visible";
+        pizzaName.style.visibility = "hidden";
+        pizzaPrice.style.visibility = "hidden";
         console.log("ERROR");
     }
 })
