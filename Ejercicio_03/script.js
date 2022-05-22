@@ -13,47 +13,22 @@ const pizzaName = document.querySelector("h2");
 const pizzaPrice = document.querySelector("h4");
 
 
-// let inputValue = inputNumber.value;
 
-function FindID(x) {
+Button.addEventListener("click", ()=> {
     let inputValue = inputNumber.value;
-    if(inputValue == x.id){
-        console.log(x.id);
-        return true 
-    } else {
-        return false
+    const found = Pizzas.find(pizza => {if(pizza.id == inputValue){return true}})
+    const errorAlert = document.createElement("h2");
+    const card = document.querySelector(".card");
+
+    if(found){
+        console.log("Id encontrado");
+        pizzaName.textContent = found.nombre;
+        pizzaPrice.textContent = found.precio;
+        errorAlert.style.visibility = "hidden"
+    }else if (found == undefined){
+        errorAlert.textContent = "No existe pizza con ese ID";
+        card.appendChild(errorAlert);
+        errorAlert.style.visibility
+        console.log("ERROR");
     }
-}
-
-Button.addEventListener("click",()=>{
-    Pizzas.map((pizza)=> { 
-        if(FindID(pizza)){
-            console.log("ID Encontrado");
-        }else if(FindID(pizza) == false) {
-            console.log("ERROR");
-        }
-        })
 })
-
-
-// Pizzas.map((pizza)=> { 
-//     FindID(pizza)
-// })
-
-//Probar doble if, un if que tome el resultado de otro 
-//Uno que tome el resultado del forEach 
-
-/////
-
-// Button.addEventListener("click", event => {
-//     let inputValue = inputNumber.value;
-//     // console.log(inputValue);
-//     Pizzas.map((pizza) => {
-//         if (inputValue == pizza.id ){
-//                 pizzaName.textContent = pizza.nombre;
-//                 pizzaPrice.textContent = `${pizza.precio}$`;
-//         }else if (inputValue != pizza.id) {
-//             console.log("no existe");
-//             }
-//         });
-//     })
