@@ -9,6 +9,7 @@ const Pizzas = [
 
 localStorage.setItem("Pizzas", JSON.stringify(Pizzas))
 
+const CardContainer = document.querySelector(".card-container")
 const PizzaCard = document.querySelector(".card");
 const PizzaName = document.querySelector(".pizza-name");
 const PizzaImage = document.querySelector(".pizza-img");
@@ -17,6 +18,9 @@ const PizzaPrice = document.querySelector(".price");
 
 const Form = document.querySelector("#ID-form");
 
+const ErrorMessage = document.querySelector(".error");
+const InputEmpty = document.createElement("span");
+CardContainer.appendChild(InputEmpty);
 
 function FindID (id) {
     const resultado = Pizzas.find(pizza => pizza.id == id)
@@ -26,11 +30,17 @@ function FindID (id) {
         PizzaImage.setAttribute("src", resultado.img);
         PizzaIngredients.textContent = resultado.ingredientes.map(ing => ing);
         PizzaPrice.textContent = resultado.precio;
+        ErrorMessage.classList.add("error-delete");
+        ErrorMessage.classList.remove("error-message");
+        ErrorMessage.textContent = "";
     }else if (typeof resultado === "undefined"){
         PizzaName.textContent = "";
         PizzaImage.setAttribute("src", "");
         PizzaIngredients.textContent = "";
         PizzaPrice.textContent = "";
+        ErrorMessage.textContent = "ID NO ENCONTRADO";
+        ErrorMessage.classList.remove("error-delete");
+        ErrorMessage.classList.add("error-message");
         console.log("ID NO ENCONTRADO");
     }
     
@@ -41,8 +51,13 @@ Form.addEventListener("submit", (e) => {
     e.preventDefault()
     const ID_Input = document.querySelector("#id-input").value;
     if(ID_Input == ""){
+        InputEmpty.textContent = "No deje el campo vacio";
+        InputEmpty.classList.add("empty-input-ms");
+        InputEmpty.classList.remove("empty-input-ms-delete");
         console.log("No deje el campo vacio");
     }else{
+        InputEmpty.classList.add("empty-input-ms-delete");
+        InputEmpty.classList.remove("empty-input-ms");
         FindID(ID_Input)
         console.log(ID_Input);
     }
