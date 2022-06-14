@@ -23,7 +23,10 @@ const InputEmpty = document.createElement("span");
 CardContainer.appendChild(InputEmpty);
 
 function FindID (id) {
-    const resultado = Pizzas.find(pizza => pizza.id == id)
+    let pizzas = localStorage.getItem("Pizzas")
+    // console.log(pizzas);
+    const pizzasArray = JSON.parse(pizzas)
+    const resultado = pizzasArray.find(pizza => pizza.id == id)
     if (resultado){
         console.log(resultado);
         PizzaName.textContent = resultado.nombre;
