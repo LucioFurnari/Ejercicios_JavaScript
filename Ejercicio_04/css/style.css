@@ -21,8 +21,12 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-
+    backdrop-filter: blur(20px);
+    background-color: rgba(255,255,255,0.2);
+    border: 1px solid rgba(203,136,95,0.3);
+    border-radius: 8px;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.5);
+    margin: 0 auto;
 }
 
 /*//////////////*/
@@ -33,10 +37,26 @@ main{
     justify-content: center;
     padding: 10px;
 }
+.pizza-name{
+    margin-bottom: 16px;
+    border-bottom: 1px solid black;
+}
+.price{
+    margin-top: 10px;
+    font-weight: 600;
+}
+.pizza-ing{
+    margin-top: 16px;
+    list-style: none;
+    font-weight: 600;
+}
 
 .pizza-img{
     width: 400px;
+    /* height: 400px; */
     box-shadow: 0 1px 12px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    margin: 0 8px;
 }
 /*//////////////*/
 
@@ -61,4 +81,22 @@ main{
 #ID-form{
     display: flex;
     justify-content: center;
+}
+
+#id-input{
+    border: none;
+    padding: 10px;
+    margin-right: 4px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+#submit-btn{
+    border: none;
+    padding: 8px;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+#submit-btn:hover{
+    background-color: rgb(255, 161, 21);
 }
