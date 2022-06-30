@@ -2,10 +2,29 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    list-style: none;
+}
 
+main {
+    height: 100vh;
 }
 
 .container-card {
-    display: flex
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.item {
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid violet;
+}
+
+.item img {
+    width: 100%;
 }
