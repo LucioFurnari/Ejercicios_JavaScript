@@ -9,8 +9,9 @@ export function createCard(elem) {
     card.innerHTML = `
         <img src=${elem.img}>
         <h2>${elem.nombre}</h2>
-        <ul>${ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
-        <p>${elem.precio} $</p>
+        <p>Ingredientes: </p>
+        <ul>${ingredients.map(i => `<li>- ${i}</li>`).join('')}</ul>
+        <span>${elem.precio} $</span>
         `;
     container.appendChild(card);
 }

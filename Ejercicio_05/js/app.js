@@ -29,15 +29,14 @@ searchForm.addEventListener("submit" ,(e) => {
         cleanBtn.classList.remove("clean-button-hide");
 
         cards.forEach(card => {
-            card.classList.add("hide");
+            card.classList.add("item-hide");
             if(card.childNodes[3].textContent.toLowerCase() == input){
-                card.classList.toggle("hide");
+                card.classList.toggle("item-hide");
             }
         })
-
         cleanBtn.addEventListener("click",() => {
             cards.forEach(card => {
-                card.classList.remove("hide");
+                card.classList.remove("item-hide");
             })
         })
     }
