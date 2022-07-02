@@ -30,7 +30,7 @@ searchForm.addEventListener("submit" ,(e) => {
 
         cards.forEach(card => {
             card.classList.add("item-hide");
-            if(card.childNodes[3].textContent.toLowerCase() == input){
+            if(card.childNodes[3].textContent.toLowerCase().includes(input)){
                 card.classList.toggle("item-hide");
             }
         })

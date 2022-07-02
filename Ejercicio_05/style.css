@@ -75,6 +75,7 @@ main {
 
 .item img {
     width: 100%;
+    height: 250px;
 }
 .item h2 {
     text-align: center;
@@ -92,6 +93,7 @@ main {
     text-align: center;
     padding: 4px;
     background-color: aquamarine;
+    margin-top: auto;
 }
 /*///// EMPTY INPUT TEXT /////*/
 .empty-input{
