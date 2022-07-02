@@ -35,6 +35,7 @@ searchForm.addEventListener("submit" ,(e) => {
             }
         })
         cleanBtn.addEventListener("click",() => {
+            cleanBtn.classList.add("clean-button-hide");
             cards.forEach(card => {
                 card.classList.remove("item-hide");
             })
